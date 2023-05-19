@@ -1,4 +1,3 @@
-from src.Logica.FaltanParametros import FaltanParametros
 
 class OperacionesEnteros:
     def __init__(self, numeros):

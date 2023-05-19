@@ -1,67 +1,66 @@
 import unittest
 from src.logica.OperacionesEnteros import OperacionesEnteros
-from src.logica.OperacionesEnteros import FaltanParametros
 
 class PruebaOperacionesEnteros(unittest.TestCase):
     def test_MCD_dosNumerosPositivos_retornaMCD(self):
-        # Arrange
-        numero1 = 18
-        numero2 = 24
-        resultadoEsperado = 6
+        numero1 = 30
+        numero2 = 2
+        resultadoEsperado = 2
         operacion = OperacionesEnteros([numero1, numero2])
 
-        # Do
         resultadoActual = operacion.calcularMCD()
 
-        # Assert
         self.assertEqual(resultadoEsperado, resultadoActual)
 
     def test_MCD_tresNumerosPositivos_retornaMCD(self):
-        # Arrange
-        numero1 = 18
-        numero2 = 24
-        numero3 = 30
-        resultadoEsperado = 6
+        numero1 = 90
+        numero2 = 50
+        numero3 = 3
+        resultadoEsperado = 1
         operacion = OperacionesEnteros([numero1, numero2, numero3])
 
-        # Do
         resultadoActual = operacion.calcularMCD()
 
-        # Assert
         self.assertEqual(resultadoEsperado, resultadoActual)
 
     def test_MCD_cuatroNumerosPositivos_retornaMCD(self):
-        # Arrange
-        numero1 = 18
-        numero2 = 24
-        numero3 = 30
-        numero4 = 4
+        numero1 = 12
+        numero2 = 25
+        numero3 = 40
+        numero4 = 3
         resultadoEsperado = 2
         operacion = OperacionesEnteros([numero1, numero2, numero3, numero4])
 
-        # Do
         resultadoActual = operacion.calcularMCD()
 
-        # Assert
+        self.assertEqual(resultadoEsperado, resultadoActual)
+
+    def test_MCD_cincoNumerosPositivos_retornaMCD(self):
+        numero1 = 18
+        numero2 = 24
+        numero3 = 21
+        numero4 = 30
+        numero5 = 7
+        resultadoEsperado = 1
+        operacion = OperacionesEnteros([numero1, numero2, numero3, numero4, numero5])
+
+        resultadoActual = operacion.calcularMCD()
+
         self.assertEqual(resultadoEsperado, resultadoActual)
 
     def test_MCD_unNumeroPositivo_lanzaExcepcion(self):
-        # Arrange
-        numero1 = 18
+        numero1 = 13
         operacion = OperacionesEnteros([numero1])
 
-        # Assert
         self.assertTrue(True)
         with self.assertRaises(FaltanParametros):
             operacion.calcularMCD()
 
     def test_MCD_unaCadena_lanzaExcepcion(self):
-        # Arrange
-        numero1 = "18a"
-        numero2 = 13
+        numero1 = "11g"
+        numero2 = 12
         operacion = OperacionesEnteros([numero1, numero2])
 
-        # Assert
         self.assertTrue(True)
         with self.assertRaises(ValueError):
             operacion.calcularMCD()
